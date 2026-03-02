@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav id="home">
+    <a href="#about">À propos</a>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+
+
+</nav>
+
+<!-- Hero : première chose que le visiteur voit -->
+<section id="hero">
+    <div class="nom">
+        <h1>Rafael</h1>
+        <h2>LAVILLE</h2>
+    </div>
+    <p>Je developpe des sites webs simples tels que une calculatrice , un minuteur etc . Vous pourrez les trouver sur mon GitHub ou en cliquants sur les projets dans la section Projets . Je code en HTML CSS et JS le plus souvent , et en python des fois.</p>
+</section>
+
+<!-- À propos -->
+<section id="about">
+    <h2>À propos</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <p>Passionné par le développement <strong>JavaScript</strong> et l'écosystème <strong>Electron</strong>, j'aime créer des outils du quotidien avec un style visuel unique (Pixel Art, minimalisme).</p>
+            <p>Actuellement, je me concentre sur la création d'applications desktop qui mélangent utilité et design rétro.</p>
+        </div>
+
+        <div class="about-skills">
+            <h3>Mes outils</h3>
+            <div class="skills-list">
+                <span>JavaScript</span>
+                <span>Electron</span>
+                <span>HTML/CSS</span>
+                <span>GitHub</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Mes Projets</h2>
+
+    <div class="project-container"> <div class="card">
+        <h3>Calculatrice</h3>
+        <p>Une calculatrice interactive avec un design épuré, faite en JS.</p>
+        <a href="https://github.com/0Leafar/calculatrice-electron" target="_blank">Voir le projet</a>
+    </div>
+
+        <div class="card">
+            <h3>Calendrier Pixelisé</h3>
+            <p>Un calendrier style pixel ou on peut créer des evenement avec heure et notif un jour avant , fait en JS electron</p>
+            <a href="https://github.com/0Leafar/calendar-app" target="_blank">Voir le projet</a>
+        </div> <div class="card">
+            <h3>Widget Pixel</h3>
+            <p>Un widget pixelisé qui donne le mois et le numéro du jour avec un fond rose , fait en JS electron</p>
+            <a href="https://github.com/0Leafar/rafaelcalendrier" target="_blank">Voir le projet</a>
+        </div>
+
+        <div class="card">
+            <h3>Minuteur</h3>
+            <p>Un minuteur style widget, pas mon meilleur projet , fait en JS electron</p>
+            <a href="https://github.com/0Leafar/pixel-timer" target="_blank">Voir le projet</a>
+        </div>
+
+    </div> </section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact</h2>
+    <form action="https://formspree.io/f/xqedvpkk" method="POST">
+        <input type="text" name="name" placeholder="Ton nom" />
+        <input type="email" name="email" placeholder="Ton email" />
+        <textarea name="message" placeholder="Ton message"></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+    <a href="https://github.com/0Leafar" target="_blank">Mon GitHub</a>
+</section>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+<a href="#home" class="back-to-top">↑</a>
+
+<footer>
+    <p>&copy; 2026 Rafael — Tous droits réservés</p>
+    <p>Fait avec passion et beaucoup de JavaScript 👾</p>
+</footer>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const backToTop = document.querySelector('.back-to-top');
+
+
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+        }
+    });
+</script>
+
+</body>
