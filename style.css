@@ -83,6 +83,7 @@ input, textarea {
 button {
     background-color: #4f545c;
     border: none;
+    color: white;
     font-weight: bold;
     font-family: Inter, sans-serif;
     min-height: 50px;
@@ -111,7 +112,6 @@ button {
 
 #contact {
     text-align: center;
-    color: white;
 }
 
 
@@ -240,4 +240,5 @@ footer p {
     background-color: #5865f2;
     transform: translateY(-5px);
 }
+
 
