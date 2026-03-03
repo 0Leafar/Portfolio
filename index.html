@@ -14,8 +14,7 @@
     <a href="#about">À propos</a>
     <a href="#projects">Projets</a>
     <a href="#contact">Contact</a>
-
-
+    <button id="theme-toggle" style="font-size: 1rem; padding: 5px 10px; min-height: auto; width: auto;">Mode</button>
 </nav>
 
 <!-- Hero : première chose que le visiteur voit -->
@@ -89,7 +88,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-<a href="#home" class="back-to-top">↑</a>
+<a href="#" class="back-to-top">↑</a>
 
 <footer>
     <p>&copy; 2026 Rafael — Tous droits réservés</p>
@@ -103,8 +102,18 @@
     </p>
     <p>Fait avec passion et fun en HTML et CSS uniquement !</p>
 </footer>
-
 <script>
+    const navbar = document.querySelector('#home');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 1) {
+            navbar.style.scale = '1.03';
+        } else {
+            navbar.style.scale = '1.0';
+
+        }
+    })
+
 
     document.addEventListener('DOMContentLoaded', () => {
         const backToTop = document.querySelector('.back-to-top');
@@ -114,15 +123,29 @@
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
                     backToTop.classList.add('show');
+                    console.log('show');
                 } else {
                     backToTop.classList.remove('show');
+                    console.log('hide');
+                }
+            });
+
+            const toggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            toggleBtn.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+
+
+                if (body.classList.contains('light-mode')) {
+                    toggleBtn.textContent = "Sombre";
+                } else {
+                    toggleBtn.textContent = "Clair";
                 }
             });
         }
-    });
+        });
+
 </script>
 
-
 </body>
-
-
