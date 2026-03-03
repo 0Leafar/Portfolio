@@ -2,14 +2,39 @@ html {
     scroll-behavior: smooth;
 }
 
+#home {
+    transition: all 300ms ease-in-out;
+}
+
 nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 800px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
     display: flex;
-    gap: 3rem;
-    justify-content: flex-start;
-    font-size: 150%;
-    font-family: arial, sans-serif;
-    background: black;
-    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+
+.light-mode nav {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #2e3338;
+}
+
+.light-mode nav a {
+    color: #2e3338;
 }
 
 a {
@@ -23,6 +48,12 @@ body {
     background-color: #36393f;
     color: #e0e0e0;
     font-family: Inter, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    padding-top: 100px;
+}
+
+section, .card, .about-skills, input, textarea, button, nav, a {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 img {
@@ -44,7 +75,9 @@ section {
 #hero {
     gap: 3rem;
     display: flex;
+    justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -120,18 +153,24 @@ button {
     flex-wrap: wrap;
     gap: 1.5rem;
     margin-top: 2rem;
+    justify-content: center;
 }
-
 
 .card {
     background-color: #2f3136;
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid #444;
-    flex: 1 1 calc(45% - 1rem);
-    min-width: 250px;
-    max-width: 600px;
-    margin: 0 auto 1.5rem auto;
+    flex: 0 1 calc(50% - 0.75rem);
+    min-width: 280px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #5865f2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card h3 {
@@ -151,9 +190,11 @@ button {
     color: #00aff4;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.2s;
 }
 
 .card a:hover {
+    color: #ffffff;
     text-decoration: underline;
 }
 
@@ -193,8 +234,14 @@ button {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: default;
 }
 
+.skills-list span:hover {
+    background-color: #4752c4;
+    transform: scale(1.1);
+}
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -221,7 +268,7 @@ footer p {
     text-decoration: none;
     border-radius: 50%;
     font-size: 20px;
-    transition: 0.4s; 
+    transition: 0.4s;
     z-index: 1000;
     border: 1px solid #444;
 
@@ -241,4 +288,95 @@ footer p {
     transform: translateY(-5px);
 }
 
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
 
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #2e3338;
+}
+
+.light-mode section {
+    border-bottom: 1px solid #e3e5e8;
+}
+
+
+.light-mode .card,
+.light-mode .about-skills {
+    background-color: #f2f3f5;
+    border: 1px solid #dbdee1;
+}
+
+.light-mode .card h3 {
+    color: #060607;
+}
+
+.light-mode .card p {
+    color: #4e5058;
+}
+
+
+.light-mode input,
+.light-mode textarea {
+    background-color: #ebedef;
+    border: 2px solid #dbdee1;
+    color: #2e3338;
+}
+
+.light-mode button,
+.light-mode #contact a {
+    background-color: #5865f2;
+    color: white;
+    border: none;
+}
+
+.light-mode button:hover,
+.light-mode #contact a:hover {
+    background-color: #4752c4;
+}
+
+
+.light-mode footer {
+    border-top: 1px solid #e3e5e8;
+    color: #5c6370;
+}
+
+.light-mode .back-to-top {
+    background-color: #ffffff;
+    color: #2e3338;
+    border: 1px solid #dbdee1;
+}
+
+#theme-toggle {
+    cursor: pointer;
+    border: 1px solid #4f545c;
+    background: #2f3136;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: #5865f2;
+    transform: scale(1.05);
+}
+
+.light-mode #theme-toggle {
+    background: #ebedef;
+    color: #2e3338;
+    border-color: #dbdee1;
+}
+
+
+nav.scrolled {
+    width: 100%;
+    top: 0;
+    border-radius: 0;
+}
