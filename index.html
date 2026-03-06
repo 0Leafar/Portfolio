@@ -107,9 +107,9 @@
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 1) {
-            navbar.style.scale = '1.03';
+            navbar.style.transform = 'translateX(-50%) scale(1.03)'
         } else {
-            navbar.style.scale = '1.0';
+            navbar.style.transform = 'translateX(-50%) scale(1)'
 
         }
     })
@@ -123,10 +123,10 @@
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
                     backToTop.classList.add('show');
-                    console.log('show');
+
                 } else {
                     backToTop.classList.remove('show');
-                    console.log('hide');
+
                 }
             });
 
